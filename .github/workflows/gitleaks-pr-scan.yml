@@ -9,5 +9,6 @@ permissions:
 
 jobs:
   gitleaks:
+    if: github.event.pull_request.head.repo.fork == false
     uses: clouddrove/github-shared-workflows/.github/workflows/pr-gitleaks-scan.yml@v2
     secrets: inherit
